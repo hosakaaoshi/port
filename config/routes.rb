@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'homes#top'
-    #get 'relationships'
+    resources :tweet_images, only: [:new, :create, :index, :show, :destroy]
     resources :users,only: [:show,:edit,:update,:destroy] do
       get 'followers' => 'relationships#followers', as: 'followers'
       get 'followings' => 'relationships#followings', as: 'followings'

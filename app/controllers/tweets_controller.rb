@@ -2,7 +2,6 @@ class TweetsController < ApplicationController
   def index
     @tweet = Tweet.new
     @tweets = Tweet.all
-    #@tweet_comment = TweetComment.new
   end
 
   def show
