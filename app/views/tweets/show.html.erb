@@ -1,0 +1,21 @@
+<h3>tweet詳細</h3>
+<table claas= "table">
+<tr>
+<th><%= @tweet.user.name %></th>
+<th><%= @tweet.body %>
+<%#= attachment_image_tag @tweet, :image, :fill, 100,100, format: 'jpeg' %></th>
+<th><%= link_to "編集",edit_tweet_path(@tweet) %></th>
+<th><%= link_to "コメント", new_tweet_comment_path(@tweet) %></th>
+</tr>
+</table>
+
+<h1>コメント欄</h1>
+<% @comments.each do |comment| %>
+ <%= comment.user.name %>
+ <%= comment.comment %>
+<% end %>
+
+<%= form_with(model: [@tweet, @comment], local: true) do |f| %>
+ <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
+ <%= f.submit "go" %>
+<% end %>

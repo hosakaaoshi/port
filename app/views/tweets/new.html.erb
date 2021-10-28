@@ -1,0 +1,5 @@
+<%= form_with model: @tweet, local:true do |f| %>
+ <%= f.text_area :body %>
+ <%#= f.attachment_field :image %>
+ <%= f.submit 'tweet' %>
+<% end %>

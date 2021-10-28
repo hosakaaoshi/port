@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+      <h1>welcom!</h1>
+      <h3>
+        ここはあなたという一人の人間のことをみんなに知ってもらう場です。<br>
+        節度ある発言を心がけましょう心掛けましょう！
+      </h3>
+    </div>
+  </div>
+  <div claas="btn-wrapper col-10 mx-auto">
+    <div class="row">
+     <%= link_to "Log in", new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
+     <%= link_to "Sing_up", new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" %>
+     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    </div>
+  </div>
+</div>

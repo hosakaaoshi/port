@@ -1,0 +1,19 @@
+<table class="table">
+  <tr>
+    <th><h2>Home</h2></th>
+    <th><%= link_to '投稿', new_tweet_path %></th>
+  </tr>
+</table>
+ <% @tweets.each do |tweet| %>
+  <%= link_to tweet.user.name, user_path(tweet.user) %>
+  <%= link_to tweet.body, tweet_path(tweet) %>
+  <%#= attachment_image_tag tweet, :image, :fill, 50,50, format:'jpeg' %>
+   <table class="table">
+    <tr>
+   <th><div id="favorite_buttons_<%= tweet.id %>">
+    <%= render 'favorite/favorite', tweet: tweet %></th>
+   </div>
+   <div>
+    <th><p>コメント数:<%=@tweet.comments.count %></p></th>
+   </div>
+ <% end %>

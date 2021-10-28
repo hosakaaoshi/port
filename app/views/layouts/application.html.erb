@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ルックミー</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div claas="">
+　 <sideber>
+　  <% if user_signed_in? %>
+　 <li><%= link_to "Home", user_path(current_user) %></li>
+　  <li><%= link_to "tweet", tweets_path %></li>
+　  <li><%= link_to "通知", notifications_path %></li>
+　  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+　  <% end %>
+　 </sideber>
+　</div>
+    <%= yield %>
+  </body>
+</html>
