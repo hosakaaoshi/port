@@ -4,21 +4,26 @@
     <title>ルックミー</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div claas="">
-　 <sideber>
-　  <% if user_signed_in? %>
-　 <li><%= link_to "Home", user_path(current_user) %></li>
-　  <li><%= link_to "tweet", tweets_path %></li>
-　  <li><%= link_to "通知", notifications_path %></li>
-　  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-　  <% end %>
-　 </sideber>
-　</div>
-    <%= yield %>
+    <div class="container">
+     <div class="row">
+      <div class="col-xs-2">
+       <ul class="nav flex-column">
+  　     <% if user_signed_in? %>
+        　  <li><%= link_to "Home", user_path(current_user) %></li>
+        　  <li><%= link_to "tweet", tweets_path %></li>
+        　  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        　  <%#= link_to "通知", notifications_path %>
+  　     <% end %>
+       </ul>
+      </div>
+       <div class="col-xs-10">
+        <%= yield %>
+       </div>
+     </div>
+    </div>
   </body>
 </html>

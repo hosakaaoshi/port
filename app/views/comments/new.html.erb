@@ -2,5 +2,5 @@
 
 <%= form_with model:[@tweet, @comment], method: :post do |f| %>
   <%= f.text_area :content, placeholder: 'コメント' %>
-   <%= f.submit'コメント' %>
+   <%= f.submit'コメント', class:"btn btn-primary" %>
   <% end %>

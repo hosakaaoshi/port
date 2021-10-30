@@ -1,13 +1,29 @@
-<% if current_user.following?(tweet.user) %>
-  <%= link_to "Unfollow", user_relationships_path(tweet.user.id), method: :delete %>
-<% else %>
-  <%= link_to "Follow", user_relationships_path(tweet.user.id), method: :post %>
-<% end %>
- </th>
-  <%= notifications = @notifications.where.not(visitor_id: current_user.id) %>
-  <% if notifications.exists? %>
-   <%= render notifications %>
-  <% else %>
-   <<p> 通知はありません </p>>
-   </table>
+<% visitor = @notification.visitor %>
+<% visited = @notification.visited %>
+
+<div class='m-2'>
+  <%= link_to user_path(visitor) do %>
+    <span class="visitor_user_image_box"><%= attachment_image_tag visitor, :image, class:"visitor_user_image", fallback: "logo.png" %></span>
+    <%= visitor.name %>
   <% end %>
+  <span>さんが</span>
+
+  <% case notification.action %>
+    <% when 'follow' then %>
+      <%= "あなたをフォローしました" %>
+    <% when 'chat' then %>
+      <%= link_to 'あなたにメッセージ', tweet_comment_path(notification.visitor), style:"font-weight: bold;", class: "border-bottom" %>
+      <%= "を送りました" %>
+  <% end %>
+  <span><%= " (#{time_ago_in_words(notification.created_at)}前)" %></span><br>
+</div>
+app/views/notifications/index.html.erb
+<div class="text-center">
+  <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
+
+  <% if notifications.exists? %>
+    <%= render notification %>
+  <% else %>
+   <p>通知はありません</p>
+  <% end %>
+</div>
