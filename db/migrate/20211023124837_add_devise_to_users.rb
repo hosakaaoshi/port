@@ -34,7 +34,6 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
 
 
        #t.timestamps null: false
-       t.string :name
     end
 
     add_index :users, :email,                unique: true
