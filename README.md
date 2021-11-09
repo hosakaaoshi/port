@@ -15,6 +15,13 @@
 ### 主な利用シーン
 <自分に自信がない時>
 
+## 設計書
+WMS
+<https://docs.google.com/spreadsheets/d/1Sj8cGnBKWTbZ62xrOpvgg284wAITmb-6ZfyOULdjDHc/edit?usp=sharing>
+
+テーブル定義書
+<https://docs.google.com/spreadsheets/d/1qpwqdRHvksB9mqwaOZUWOeShQAIS1S834tTSdA6h2ME/edit?usp=sharing>
+
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1sOXFVNhQLgimxhZ1CFWeUyjkcelH73oxfFHAY_tHR-4/edit#gid=566224576>
 
