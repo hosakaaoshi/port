@@ -1,6 +1,6 @@
 <h2>投稿する</h2>
 
 <%= form_with model:[@tweet, @comment], method: :post do |f| %>
-  <%= f.text_area :content, placeholder: 'コメント' %>
+  <%= f.text_area :comment, placeholder: 'コメント' %>
    <%= f.submit'コメント', class:"btn btn-primary" %>
   <% end %>

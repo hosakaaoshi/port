@@ -12,6 +12,6 @@
    <th><div id="favorite_buttons_<%= tweet.id %>">
     <%= render 'favorites/favorite', tweet: tweet %></th>
    </div>
-    <th><p>コメント数:<%=@tweet.comments.count %></p></th>
+    <th><p>コメント数:<% @tweet.comments.count %></p></th>
 </table>
  <% end %>
